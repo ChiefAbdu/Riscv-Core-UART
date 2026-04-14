@@ -5,5 +5,5 @@ A Complex Engineering Problem which is based on intergrating UART on a RISCV Cor
 
 
 # Contributors
-- Abdul Nafeh
 - Abdullah Nadeem
+- Abdul Nafeh
