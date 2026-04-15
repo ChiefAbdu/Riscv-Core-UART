@@ -164,9 +164,9 @@ module uart_tb;
         $display("Total Failed : %0d", fail_count);
 
         if (fail_count == 0)
-            $display("STATUS : TEST PASSED ✅");
+            $display("STATUS : TEST PASSED ");
         else
-            $display("STATUS : TEST FAILED ❌");
+            $display("STATUS : TEST FAILED ");
 
         $display("==========================================\n");
 
