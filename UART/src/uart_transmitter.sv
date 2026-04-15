@@ -10,12 +10,6 @@ module uart_transmitter (
 );
 
     // -------------------------------------------------------------------------
-    // Parameters & Localparams
-    // -------------------------------------------------------------------------
-    localparam int SYMBOL_EDGE_TIME    = CLOCK_FREQ / BAUD_RATE;
-    localparam int CLOCK_COUNTER_WIDTH = $clog2(SYMBOL_EDGE_TIME);
-
-    // -------------------------------------------------------------------------
     // Internal signals
     // -------------------------------------------------------------------------
     logic [9:0]                     tx_shift_value, tx_shift_next;

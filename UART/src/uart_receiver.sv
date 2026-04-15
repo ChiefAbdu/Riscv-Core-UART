@@ -9,12 +9,6 @@ module uart_receiver (
     input  logic       serial_in
 );
 
-    // -------------------------------------------------------------------------
-    // Parameters & Localparams
-    // -------------------------------------------------------------------------
-    localparam int SYMBOL_EDGE_TIME      = CLOCK_FREQ / BAUD_RATE;
-    localparam int SAMPLE_TIME           = SYMBOL_EDGE_TIME / 2;
-    localparam int CLOCK_COUNTER_WIDTH   = $clog2(SYMBOL_EDGE_TIME);
 
     // -------------------------------------------------------------------------
     // Internal signals
