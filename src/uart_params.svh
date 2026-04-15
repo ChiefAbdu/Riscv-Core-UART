@@ -1,19 +1,15 @@
 `ifndef UART_PARAMS_SVH
 `define UART_PARAMS_SVH
 
+localparam int CLOCK_FREQ      = 125_000_000;   // Hz
+localparam int BAUD_RATE       = 115_200;
 
-// UART Trasnmitter/Receiver params
-    parameter CLOCK_FREQ = 125_000_000;
-    parameter BAUD_RATE = 115_200;
+localparam int WIDTH           = 1;              // button bus width
 
-// Synchronize/Edge-Detection params
-    parameter WIDTH = 1
+localparam int DEBOUNCE_SAMPLES  = CLOCK_FREQ / 1_000;   // 1ms stability window
+localparam int PULSE_SAMPLES     = CLOCK_FREQ / 10_000;  // 0.1ms min pulse width
 
-// Debounce/Button-Parser params
+localparam int SAMPLE_CNT_MAX  = DEBOUNCE_SAMPLES;
+localparam int PULSE_CNT_MAX   = PULSE_SAMPLES;
 
-    //parameter WIDTH              = 1,
-    parameter SAMPLE_CNT_MAX     = 25000,
-    parameter PULSE_CNT_MAX      = 150,
-    parameter WRAPPING_CNT_WIDTH = $clog2(SAMPLE_CNT_MAX) + 1,
-    parameter SAT_CNT_WIDTH      = $clog2(PULSE_CNT_MAX) + 1
-
+`endif
