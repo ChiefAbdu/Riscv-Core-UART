@@ -20,6 +20,7 @@ module uart (
 );
 
     logic serial_in_reg;
+    logic serial_out_reg;
     logic serial_out_tx;        // combinational output from transmitter
 
     always_ff @(posedge clk) begin
@@ -27,16 +28,12 @@ module uart (
         serial_in_reg  <= reset ? 1'b1 : serial_in;
     end
 
-    logic  serial_out_reg;
     assign serial_out = serial_out_reg;
 
     // -------------------------------------------------------------------------
     // UART Transmitter
     // -------------------------------------------------------------------------
-    uart_transmitter #(
-        .CLOCK_FREQ (CLOCK_FREQ),
-        .BAUD_RATE  (BAUD_RATE)
-    ) u_tx (
+    uart_transmitter u_tx (
         .clk            (clk),
         .reset          (reset),
         .data_in        (data_in),
@@ -48,10 +45,7 @@ module uart (
     // -------------------------------------------------------------------------
     // UART Receiver
     // -------------------------------------------------------------------------
-    uart_receiver #(
-        .CLOCK_FREQ (CLOCK_FREQ),
-        .BAUD_RATE  (BAUD_RATE)
-    ) u_rx (
+    uart_receiver u_rx (
         .clk            (clk),
         .reset          (reset),
         .data_out       (data_out),
