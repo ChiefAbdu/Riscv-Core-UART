@@ -8,3 +8,4 @@ A Complex Engineering Problem which is based on intergrating UART on a RISCV Cor
 - Abdullah Nadeem
 - Abdul Nafeh
 - Abubakar Abrar
+- Umair Nadeem
